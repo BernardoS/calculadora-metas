@@ -1,5 +1,9 @@
 :root {
-
+ --main-color:#4169E1;
+ --bg-default:#F6F6F6;
+ --txt-light:#FFFFFF;
+ --bg-ligth-blue:#D6DFFB;
+ --border-black: #000000
 }
 
 body{
