@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Header from "../../components/Header"
 import NoteIcon from "../../assets/icons/note-edit.svg";
 import { Banner, BannerAction, BannerActionLink, BannerImageSection, BannerInfoSection, BannerInfoText, HomeContainer, HomeContent } from "./styles";
@@ -17,7 +16,7 @@ const Home = () => {
                             </BannerInfoText>
                             <BannerAction>
                                 <BannerActionLink to="/calculadora-metas/info-inicial" >
-                                        Calcular sua Meta <img src={NoteIcon}/>
+                                        Calcular sua Meta <img src={NoteIcon} alt="ícone de calcular a meta"/>
                                 </BannerActionLink>
                             </BannerAction>
                         </BannerInfoSection>
