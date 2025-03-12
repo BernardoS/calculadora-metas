@@ -1,11 +1,13 @@
 :root {
- --main-color:#4169E1;
- --bg-default:#F6F6F6;
- --txt-light:#FFFFFF;
- --bg-ligth-blue:#D6DFFB;
- --border-black: #000000
+ --main-color: #4169E1;
+ --bg-default: #F6F6F6;
+ --bg-blue: #D6DFFB;
+ --txt-light: #FFFFFF;
+ --txt-dark: #000000;
+ --border-default: #000000;
 }
 
 body{
   margin:0;
+  font-family:'Montserrat', Helvetica, sans-serif;
 }

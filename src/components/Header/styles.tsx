@@ -7,7 +7,7 @@ export const HeaderContainer = styled.div`
     justify-content: center;
     width: 100%;
     height: 120px;
-    border-bottom: 2px solid var(--border-black);
+    border-bottom: 2px solid var(--border-default);
 `;
 
 export const HeaderContent = styled.div`
@@ -40,9 +40,9 @@ export const NavItem = styled(Link)`
     text-decoration: none;
     border-bottom:0px solid transparent;
     transition:0.2s;
+    box-sizing: border-box;
+    height: 35px;
     &:hover{
         border-bottom:3px solid var(--txt-light);
     }
-    height: 35px;
-    box-sizing: border-box;
 `
