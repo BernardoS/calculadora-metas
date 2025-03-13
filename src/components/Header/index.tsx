@@ -10,7 +10,7 @@ const Header = () => {
                 </LogoContainer>
                 <NavBar>   
                     <NavItem to="/calculadora-metas">Home</NavItem>
-                    <NavItem to="/calculadora-metas/info-inicial">Calculadora</NavItem>
+                    <NavItem to="/calculadora-metas/info">Calculadora</NavItem>
                 </NavBar>
             </HeaderContent>
         </HeaderContainer>

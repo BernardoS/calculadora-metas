@@ -7,8 +7,7 @@ const MainRouter = () =>{
         <BrowserRouter>
             <Routes>
                 <Route path="/calculadora-metas/" element={<Home/>}/>
-                <Route path="/calculadora-metas/info-inicial" element={<h1>Informações iniciais</h1>}/>
-                <Route path="/calculadora-metas/info-final" element={<h1>Informações finais</h1>}/>
+                <Route path="/calculadora-metas/info" element={<h1>Informações</h1>}/>
                 <Route path="/calculadora-metas/resultados" element={<h1>Resultados</h1>}/>
             </Routes>
         </BrowserRouter>
