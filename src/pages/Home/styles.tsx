@@ -164,3 +164,104 @@ export const BannerImageSection = styled.section`
         aspect-ratio: 2 / 1;
     }
 `
+
+export const Explanation = styled.div`
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+`
+
+export const ExplanationTitle = styled.h2`
+    font-weight: bold;
+    font-size: 32px;
+    color: var(--main-title);
+    margin: 32px 0px;
+`
+
+export const ExplanationCardsSection = styled.section`
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    row-gap: 16px;
+`
+
+export const ExplanationCard = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 250px;
+    width: 32.5%;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
+    -webkit-box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
+    -moz-box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
+    border: 2px solid var(--border-default);
+    border-radius: 8px;
+    padding: 32px;
+    transition: 0.2s;
+
+    &.primary{
+        background-color: var(--card-primary);
+    }
+    &.secondary{
+        background-color: var(--card-secondary);
+    }
+    &.tertiary{
+        background-color: var(--card-tertiary);
+    }   
+
+    &:hover{
+        scale:1.05;
+    }
+
+    
+    @media ${device.tablet} {
+        width: 48%;
+    }
+
+    @media ${device.mobile} {
+        width: 100%;
+    }
+`;
+
+export const CardImageContainer = styled.div`
+    width: 80%;
+    aspect-ratio: 1;
+    background-color: var(--card-image-bg);
+    box-sizing: border-box;
+    box-shadow: 5px 5px 0px -2px rgba(26,26,26,1);
+    -webkit-box-shadow: 5px 5px 0px -2px rgba(26,26,26,1);
+    -moz-box-shadow: 5px 5px 0px -2px rgba(26,26,26,1);
+    border-radius: 50%;
+    border:2px solid var(--border-default);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover{
+        animation: shake-card 0.5s ease-in-out alternate;
+    }
+`
+
+export const CardTitleSection = styled.section`
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    margin-top: 32px;
+    color:var(--card-text-light);
+
+    h2{
+        margin:unset;
+        font-size: 24px;
+        span{
+            font-size: 32px;
+        }
+    }
+    p{
+        font-size: 14px;
+        font-weight: 500;
+    }
+`;
