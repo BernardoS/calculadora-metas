@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { device } from "../../utils/layoutBreakpoints";
 
 export const HeaderContainer = styled.div`
     background-color: var(--main-color);
@@ -12,11 +13,22 @@ export const HeaderContainer = styled.div`
 
 export const HeaderContent = styled.div`
     display: flex;
+    width: 100%;
+    max-width: 1200px;
+    padding: 32px;
+    box-sizing: border-box;
+`;
+
+export const DesktopContent = styled.div`
+    display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
-    max-width: 1200px;
+
+    @media ${device.tablet} {
+        display: none;
+    }
 `;
 
 export const LogoContainer = styled.div`
@@ -45,4 +57,44 @@ export const NavItem = styled(Link)`
     &:hover{
         border-bottom:3px solid var(--txt-light);
     }
+`
+
+export const MobileContent = styled.div`
+    display: none;
+    
+    @media ${device.tablet} {
+        display: flex;
+        width: 100%;
+    }
+`;
+
+export const MenuButtonContainer =styled.div`
+    position: absolute;
+    display: flex;
+    width:20%;
+    align-items:center ;
+    justify-content: flex-start;
+
+    button{
+        aspect-ratio: 1;
+        background-color: var(--bg-default);
+        box-shadow: 5px 5px 0px -2px rgba(26,26,26,1);
+        -webkit-box-shadow: 5px 5px 0px -2px rgba(26,26,26,1);
+        -moz-box-shadow: 5px 5px 0px -2px rgba(26,26,26,1);
+        border-radius: 8px;
+        border:2px solid var(--border-default);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+            height: 32px;
+        }
+    }
+`;
+
+export const MobileLogoContainer = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
