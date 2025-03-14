@@ -1,6 +1,40 @@
 :root {
-
+ --main-color: #4169E1;
+ --main-title: #4169E1;
+ --bg-default: #F6F6F6;
+ --bg-blue: #D6DFFB;
+ --txt-light: #FFFFFF;
+ --txt-dark: #000000;
+ --border-default: #000000;
+ --card-image-bg: #F6F6F6;
+ --card-text-light: #FFFFFF;
+ --card-primary: #5A7BE6;
+ --card-secondary: #3B5BCC;
+ --card-tertiary: #2A4BAA;
 }
+
 body{
   margin:0;
+  font-family:'Montserrat', Helvetica, sans-serif;
+}
+
+@keyframes shake-banner {
+  0% { transform: scaleX(-1) translateX(0); }
+  25% { transform: scaleX(-1) translateX(-2px) translateY(-2px); }
+  50% { transform: scaleX(-1) translateX(2px) translateY(2px); }
+  75% { transform: scaleX(-1) translateX(-2px) translateY(-2px); }
+  100% { transform: scaleX(-1) translateX(0); }
+}
+
+@keyframes shake-card {
+  0% { transform: translateX(0); }
+  25% { transform:  translateX(-2px) translateY(-2px); }
+  50% { transform:  translateX(2px) translateY(2px); }
+  75% { transform:  translateX(-2px) translateY(-2px); }
+  100% { transform:  translateX(0); }
+}
+
+@keyframes show-menu {
+  0% { width: 5%; }
+  100% { width: 80%; }
 }
