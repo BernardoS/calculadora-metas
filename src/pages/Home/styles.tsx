@@ -10,6 +10,7 @@ export const HomeContainer = styled.div`
     justify-content: center;
     width: 100%;
     min-height: 100dvh;
+    padding-bottom:32px;
 `
 
 export const HomeContent = styled.div`

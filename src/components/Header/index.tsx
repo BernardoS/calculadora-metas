@@ -23,6 +23,7 @@ const Header = () => {
                         <NavItem to="/calculadora-metas/info">Calculadora</NavItem>
                     </NavBar>
                 </DesktopContent>
+
                 <MobileContent>
                     <MenuButtonContainer>
                         <button onClick={() => setOpen(true)}>
@@ -32,7 +33,6 @@ const Header = () => {
                     <MobileLogoContainer>
                         <img src={HeaderMobileLogo} aria-label="Calculadora de Metas" />
                     </MobileLogoContainer>
-
 
                     <DrawerContainer className={open ? "open" : ""}>
                         <DrawerContent className={open ? "open" : ""}>

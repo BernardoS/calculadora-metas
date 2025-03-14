@@ -19,6 +19,7 @@ import {
     HomeContainer,
     HomeContent
 } from "./styles";
+import Footer from "../../components/Footer";
 
 const Home = () => {
     return (
@@ -92,7 +93,7 @@ const Home = () => {
                     </Explanation>
                 </HomeContent>
             </HomeContainer>
-
+            <Footer/>
         </>
 
     )
