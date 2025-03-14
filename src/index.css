@@ -33,3 +33,8 @@ body{
   75% { transform:  translateX(-2px) translateY(-2px); }
   100% { transform:  translateX(0); }
 }
+
+@keyframes show-menu {
+  0% { width: 5%; }
+  100% { width: 80%; }
+}
