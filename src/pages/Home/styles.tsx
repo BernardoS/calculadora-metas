@@ -63,8 +63,14 @@ export const BannerInfoText = styled.div`
         font-size: 48px;
         margin:16px 0px;
         transition: 0.2s ease-in-out;
+        
         &:hover{
             scale: 1.05;
+        }
+        
+        b {
+            font-size: 56px;
+            color: var(--main-color-darker);
         }
     }
     h2{
