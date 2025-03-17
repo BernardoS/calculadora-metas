@@ -35,7 +35,7 @@ const Home = () => {
                             </BannerInfoText>
                             <BannerAction>
                                 <BannerActionLink to="/calculadora-metas/info" >
-                                    Calcular sua Meta <img src={NoteIcon} alt="ícone de calcular a meta" />
+                                    Calcular Planejamento <img src={NoteIcon} alt="ícone de calcular a meta" />
                                 </BannerActionLink>
                             </BannerAction>
                         </BannerInfoSection>

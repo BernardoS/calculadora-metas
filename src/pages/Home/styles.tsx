@@ -132,6 +132,10 @@ export const BannerActionLink = styled(Link)`
     &:hover{
         scale: 1.05;
     }
+    
+    &:active{
+        scale: 0.9;
+    }
 
     @media ${device.laptop} {
         font-size: 14px;
