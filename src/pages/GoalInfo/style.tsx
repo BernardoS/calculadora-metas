@@ -20,6 +20,9 @@ export const GoalInfoContent = styled.div`
 
 export const InfoBox = styled.div`
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
     background-color: var(--bg-default);
     border: 2px solid var(--border-default);
     border-radius: 8px;
@@ -27,6 +30,10 @@ export const InfoBox = styled.div`
     box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
     -webkit-box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
     -moz-box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
+`
+
+export const FormContainer = styled.div`
+    display: flex;
 `
 
 export const GoalForm = styled(Form)`
@@ -54,6 +61,7 @@ export const GoalFormFieldSet = styled.fieldset`
     display: flex;
     flex-direction: column;
     border: none;
+    min-height: 500px;
 
     h2{
         text-align: center;
@@ -67,6 +75,15 @@ export const GoalFormFieldSet = styled.fieldset`
     label{
         font-size: 16px;
         margin: 16px 0px;
+        b{
+            font-weight: 500;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+    }
+    &.disabled-step{
+        opacity: 0.6;
+        pointer-events: none;
     }
 `
 
