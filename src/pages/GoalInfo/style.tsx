@@ -45,13 +45,14 @@ export const GoalFormFooter = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     width: 100%;  
+    gap:16px;
 `
 
 export const GoalFormFieldSet = styled.fieldset`
     display: flex;
     flex-direction: column;
-    width: 50%;
     border: none;
 
     h2{
@@ -95,6 +96,43 @@ export const GoalFormButton = styled.button`
     -moz-box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
     transition: 0.2s;
     cursor: pointer;
+    width: 70%;
+
+    img{
+        width: 24px;
+        height: 24px;
+    }
+
+    &:hover{
+        scale: 1.05;
+    }
+
+    &:active{
+        scale: 0.9;
+    }
+
+`;
+
+export const GoalFormSecondaryButton = styled.button`
+    padding: 16px 32px;
+    background-color: var(--bg-default);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap:16px;
+    border-radius: 10px;
+    border:2px solid var(--border-default);
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
+    -webkit-box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
+    -moz-box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
+    transition: 0.2s;
+    cursor: pointer;
+    width: 70%;
 
     img{
         width: 24px;
@@ -117,4 +155,10 @@ export const GoalFormDivider = styled.div`
     border: none;
     margin:0px 32px;
     background-color: var(--border-default);
+`
+
+export const ErrorText = styled.p`
+    margin: 0;
+    color: red;
+    font-size: 12px;
 `

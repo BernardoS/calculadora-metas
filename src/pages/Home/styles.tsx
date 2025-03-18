@@ -56,7 +56,7 @@ export const BannerInfoSection = styled.section`
 export const BannerInfoText = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 16px 0px 32px;
+    margin: 32px 0px 64px;
     h1{
         color:#4169E1;
         font-weight: bold;
