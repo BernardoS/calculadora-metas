@@ -4,7 +4,6 @@ import {
 } from "formik";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import * as Yup from 'yup';
 import {
     ErrorText,
     GoalForm,
@@ -24,45 +23,11 @@ import RightIcon from "../../assets/icons/right.svg";
 import LeftIcon from "../../assets/icons/left-blue.svg";
 import { useState } from "react";
 import moment from "moment";
+import Goal from "../../interfaces/Goal";
+import { GoalFormValuesFirstStep, GoalFormValuesSecondStep } from "../../interfaces/GoalForm";
+import { firstStepValidationSchema, secondStepValidationSchema } from "../../validators/GoalForm";
 
-interface GoalFormValuesFirstStep {
-    initialQuantity: number;
-    initialDate: string;
-    growthRate?: number;
-}
 
-interface GoalFormValuesSecondStep {
-    finalQuantity: number;
-    finalDate: string;
-}
-
-interface Goal {
-    initialQuantity?: number;
-    finalQuantity?: number;
-    initialDate?: string;
-    finalDate?: string;
-    growthRate?: number;
-}
-
-const firstStepValidationSchema = Yup.object({
-    initialQuantity: Yup.number()
-        .min(0.1, "Por favor, forneça um valor maior que zero !")
-        .required("Por favor, forneça um valor para a quantidade inicial !"),
-    initialDate: Yup.date()
-        .required("Por favor, preencha a data inicial !"),
-    growthRate: Yup.number()
-        .min(0, "Por favor, forneça um valor maior que zero !")
-        .max(100, "Por favor, forneça um valor menor que 100!")
-});
-
-const secondStepValidationSchema = Yup.object({
-    finalQuantity: Yup.number()
-        .min(0.1, "Por favor, forneça um valor maior que zero !")
-        .required("Por favor, forneça um valor para a quantidade final !"),
-    finalDate: Yup.date()
-        .required("Por favor, preencha a data final !"),
-
-})
 
 const GoalInfo = () => {
 
