@@ -30,12 +30,12 @@ const Home = () => {
                     <Banner>
                         <BannerInfoSection>
                             <BannerInfoText>
-                                <h1>Quer planejar sua meta financeira de forma simples ?</h1>
+                                <h1>Quer planejar sua meta financeira de <b>forma rápida</b>  ?</h1>
                                 <h2>Aqui você calcula e descobre o quanto precisa juntar por <b>mês</b> para alcançar sua meta na <b>data que você quiser.</b></h2>
                             </BannerInfoText>
                             <BannerAction>
                                 <BannerActionLink to="/calculadora-metas/info" >
-                                    Calcular sua Meta <img src={NoteIcon} alt="ícone de calcular a meta" />
+                                    Calcular Planejamento <img src={NoteIcon} alt="ícone de calcular a meta" />
                                 </BannerActionLink>
                             </BannerAction>
                         </BannerInfoSection>

@@ -56,15 +56,21 @@ export const BannerInfoSection = styled.section`
 export const BannerInfoText = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 16px 0px 32px;
+    margin: 32px 0px 64px;
     h1{
         color:#4169E1;
         font-weight: bold;
         font-size: 48px;
         margin:16px 0px;
         transition: 0.2s ease-in-out;
+        
         &:hover{
             scale: 1.05;
+        }
+        
+        b {
+            font-size: 56px;
+            color: var(--main-color-darker);
         }
     }
     h2{
@@ -125,6 +131,10 @@ export const BannerActionLink = styled(Link)`
 
     &:hover{
         scale: 1.05;
+    }
+    
+    &:active{
+        scale: 0.9;
     }
 
     @media ${device.laptop} {
