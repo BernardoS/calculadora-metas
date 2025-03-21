@@ -144,7 +144,7 @@ const GoalInfo = () => {
                                                     disabled={currentStep != 2}
                                                     onChange={(e: ChangeEvent<HTMLInputElement>) => {
                                                         const formattedValue = e.target.value.replace(",", ".");
-                                                        setFieldValue("initialQuantity", formattedValue);
+                                                        setFieldValue("finalQuantity", formattedValue);
                                                     }} />
                                                 <ErrorMessage name='finalQuantity' component={ErrorText} />
 
