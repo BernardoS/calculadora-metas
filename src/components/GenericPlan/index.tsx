@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { GenericPlanContainer, GenericPlanSection, GenericPlanSectionLabel, GenericPlanSectionValue, GenericPlanTitle } from "./style";
+import { GenericPlanContainer, GenericPlanSection, GenericPlanSectionLabel, GenericPlanSectionValue, GenericPlanTitle } from "./styles";
 
 
 const GenericPlan = () => {

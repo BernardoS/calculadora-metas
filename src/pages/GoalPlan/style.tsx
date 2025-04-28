@@ -96,3 +96,43 @@ export const PlanBoxContent = styled.div`
     -webkit-box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
     -moz-box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
 `;
+
+export const StepButton = styled.button`
+    margin-top: 32px;
+    margin-right: 64px;
+    padding: 16px 32px;
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: end;
+    justify-content: center;
+    gap:16px;
+    border-radius: 10px;
+    border:2px solid var(--border-default);
+    color: var(--txt-light);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 10px 10px 0px -2px rgba(26,26,26,0.7);
+    -webkit-box-shadow: 10px 10px 0px -2px rgba(26,26,26,0.7);
+    -moz-box-shadow: 10px 10px 0px -2px rgba(26,26,26,0.7);
+    transition: 0.2s;
+    cursor: pointer;
+    width: 70%;
+    max-width: 250px;
+
+    img{
+        width: 24px;
+        height: 24px;
+    }
+
+    &:hover{
+        scale: 1.05;
+    }
+
+    &:active{
+        scale: 0.9;
+    }
+
+`;

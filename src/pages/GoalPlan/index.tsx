@@ -7,6 +7,8 @@ import TableWhite from "../../assets/icons/table-white.svg";
 import TableBlue from "../../assets/icons/table-blue.svg";
 import ChartWhite from "../../assets/icons/chart-white.svg";
 import ChartBlue from "../../assets/icons/chart-blue.svg";
+import RightIcon from "../../assets/icons/right.svg";
+import LeftIcon from "../../assets/icons/left-blue.svg";
 import {
     GoalPlanActions,
     GoalPlanButton,
@@ -14,7 +16,8 @@ import {
     GoalPlanContent,
     GoalPlanTitle,
     PlanBox,
-    PlanBoxContent
+    PlanBoxContent,
+    StepButton
 } from "./style";
 import { useState } from "react";
 import GenericPlan from "../../components/GenericPlan";
@@ -50,10 +53,17 @@ const GoalPlan = () => {
                             </GoalPlanButton>
                         </GoalPlanActions>
                         <PlanBoxContent>
-                            {selectedTab === "generic-plan" && (<GenericPlan />)}
+                            {selectedTab === "generic-plan" && (<>
+                                <GenericPlan />
+                                <StepButton type="button" onClick={() => setSelectedTab("table-plan")}>
+                                    Próximo passo <img src={RightIcon} alt="ícone de próximo passo" />
+                                </StepButton>
+                            </>)}
                             {selectedTab === "table-plan" && (<h1>Table Plan</h1>)}
                             {selectedTab === "chart-plan" && (<h1>Chart Plan</h1>)}
+
                         </PlanBoxContent>
+
                     </PlanBox>
                 </GoalPlanContent>
             </GoalPlanContainer>

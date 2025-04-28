@@ -35,9 +35,9 @@ export const GenericPlanSectionValue = styled.div`
     padding: 16px;
     border: 2px solid var(--border-default);
     box-sizing: border-box;
-    box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
-    -webkit-box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
-    -moz-box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
+    box-shadow: 10px 10px 0px -2px rgba(26,26,26,0.7);
+    -webkit-box-shadow: 10px 10px 0px -2px rgba(26,26,26,0.7);
+    -moz-box-shadow: 10px 10px 0px -2px rgba(26,26,26,0.7);
     text-align: right;
     font-size: 32px;
     color: var(--main-color);
