@@ -80,3 +80,19 @@ export const GoalPlanButton = styled.button`
         color: var(--txt-light);
     }
 `;
+
+export const PlanBoxContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    background-color: var(--bg-default);
+    border-radius: 8px;
+    padding: 16px;
+    border: 2px solid var(--border-default);
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
+    -webkit-box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
+    -moz-box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
+`;

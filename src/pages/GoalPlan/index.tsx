@@ -13,9 +13,11 @@ import {
     GoalPlanContainer,
     GoalPlanContent,
     GoalPlanTitle,
-    PlanBox
+    PlanBox,
+    PlanBoxContent
 } from "./style";
 import { useState } from "react";
+import GenericPlan from "../../components/GenericPlan";
 
 type PlanType = "generic-plan" | "chart-plan" | "table-plan";
 
@@ -47,6 +49,11 @@ const GoalPlan = () => {
                                 <img src={selectedTab === "chart-plan" ? ChartWhite : ChartBlue} alt="ícone de porquinho" />
                             </GoalPlanButton>
                         </GoalPlanActions>
+                        <PlanBoxContent>
+                            {selectedTab === "generic-plan" && (<GenericPlan />)}
+                            {selectedTab === "table-plan" && (<h1>Table Plan</h1>)}
+                            {selectedTab === "chart-plan" && (<h1>Chart Plan</h1>)}
+                        </PlanBoxContent>
                     </PlanBox>
                 </GoalPlanContent>
             </GoalPlanContainer>
