@@ -5,7 +5,7 @@ export const GenericPlanContainer = styled.div`
     flex-direction: column;
     width: 100%;
     height: 100%;
-    gap:32px;
+    gap:64px
 `
 
 export const GenericPlanTitle = styled.h2`
@@ -13,6 +13,8 @@ export const GenericPlanTitle = styled.h2`
     font-size: 32px;
     color: var(--main-color);
     text-align: center;
+    margin-top:32px;
+    margin-bottom: 24px;
 `
 
 export const GenericPlanSection = styled.section`

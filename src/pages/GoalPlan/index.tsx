@@ -21,6 +21,7 @@ import {
 } from "./style";
 import { useState } from "react";
 import GenericPlan from "../../components/GenericPlan";
+import TablePlan from "../../components/TablePlan";
 
 type PlanType = "generic-plan" | "chart-plan" | "table-plan";
 
@@ -59,7 +60,12 @@ const GoalPlan = () => {
                                     Próximo passo <img src={RightIcon} alt="ícone de próximo passo" />
                                 </StepButton>
                             </>)}
-                            {selectedTab === "table-plan" && (<h1>Table Plan</h1>)}
+                            {selectedTab === "table-plan" && (<>
+                                <TablePlan/>
+                                <StepButton type="button" onClick={() => setSelectedTab("chart-plan")}>
+                                    Próximo passo <img src={RightIcon} alt="ícone de próximo passo" />
+                                </StepButton>
+                            </>)}
                             {selectedTab === "chart-plan" && (<h1>Chart Plan</h1>)}
 
                         </PlanBoxContent>
