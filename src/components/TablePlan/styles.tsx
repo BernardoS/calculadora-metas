@@ -18,7 +18,7 @@ export const TablePlanTitle = styled.h2`
 `
 
 export const Table = styled.table`
-    width:100%;
+
     border-radius: 8px;
     border-spacing:0;
     color: var(--main-color);
@@ -29,16 +29,28 @@ export const Table = styled.table`
     -webkit-box-shadow: 10px 10px 0px -2px rgba(26,26,26,0.7);
     -moz-box-shadow: 10px 10px 0px -2px rgba(26,26,26,0.7);
     border:2px solid var(--border-default);
-    padding-bottom: 32px;
+    padding-bottom: 16px;
+    margin: 0 64px;
+    overflow: hidden;
 
     tr{
         text-align: center;
-        height: 32px;
-    }
-    th{
         height: 48px;
-        color: var(--main-color-darker);
     }
+
+    thead {
+        height: 48px;
+        color: var(--txt-light);
+        background-color: var(--main-color);
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        margin-bottom: 32px;
+        
+        th{
+            border-bottom: 2px solid var(--border-default);
+        }
+    }
+    
     td {
         b{
             color: var(--main-color-darker);
