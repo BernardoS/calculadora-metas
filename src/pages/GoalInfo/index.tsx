@@ -28,6 +28,7 @@ import Goal from "../../interfaces/Goal";
 import { GoalFormValuesFirstStep, GoalFormValuesSecondStep } from "../../interfaces/GoalForm";
 import { firstStepValidationSchema, secondStepValidationSchema } from "../../validators/GoalForm";
 import GoalSteps from "../../components/GoalSteps";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -35,6 +36,7 @@ const GoalInfo = () => {
 
     const [currentStep, setCurrentStep] = useState<number>(1);
     const [goal, setGoal] = useState<Goal>({});
+    const navigate = useNavigate();
 
 
     async function nextStep(
@@ -56,6 +58,7 @@ const GoalInfo = () => {
         console.log(values);
         const newGoal: Goal = { ...goal, finalDate: values.finalDate, finalQuantity: values.finalQuantity }
         setGoal(newGoal);
+        navigate("/calculadora-metas/resultados");
     }
 
     return (

@@ -82,7 +82,8 @@ export const GoalFormFieldSet = styled.fieldset`
         }
     }
     &.disabled-step{
-        opacity: 0.6;
+        opacity: 0.5;
+        scale: 0.95;
         pointer-events: none;
     }
 `
