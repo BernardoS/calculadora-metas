@@ -8,7 +8,7 @@ import TableBlue from "../../assets/icons/table-blue.svg";
 import ChartWhite from "../../assets/icons/chart-white.svg";
 import ChartBlue from "../../assets/icons/chart-blue.svg";
 import RightIcon from "../../assets/icons/right.svg";
-import LeftIcon from "../../assets/icons/left-blue.svg";
+import LeftIcon from "../../assets/icons/left.svg";
 import {
     GoalPlanActions,
     GoalPlanButton,
@@ -17,11 +17,13 @@ import {
     GoalPlanTitle,
     PlanBox,
     PlanBoxContent,
-    StepButton
+    StepButton,
+    StepFooter
 } from "./style";
 import { useState } from "react";
 import GenericPlan from "../../components/GenericPlan";
 import TablePlan from "../../components/TablePlan";
+import ChartPlan from "../../components/ChartPlan";
 
 type PlanType = "generic-plan" | "chart-plan" | "table-plan";
 
@@ -56,17 +58,33 @@ const GoalPlan = () => {
                         <PlanBoxContent>
                             {selectedTab === "generic-plan" && (<>
                                 <GenericPlan />
-                                <StepButton type="button" onClick={() => setSelectedTab("table-plan")}>
-                                    Próximo passo <img src={RightIcon} alt="ícone de próximo passo" />
-                                </StepButton>
+                                <StepFooter className="first-step">
+                                    <StepButton type="button" onClick={() => setSelectedTab("table-plan")}>
+                                        Próximo passo <img src={RightIcon} alt="ícone de próximo passo" />
+                                    </StepButton>
+                                </StepFooter>
+
                             </>)}
                             {selectedTab === "table-plan" && (<>
-                                <TablePlan/>
-                                <StepButton type="button" onClick={() => setSelectedTab("chart-plan")}>
-                                    Próximo passo <img src={RightIcon} alt="ícone de próximo passo" />
-                                </StepButton>
+                                <TablePlan />
+                                <StepFooter className="second-step">
+                                    <StepButton type="button" onClick={() => setSelectedTab("generic-plan")}>
+                                        Passo Anterior <img src={LeftIcon} alt="ícone de passo anterior" />
+                                    </StepButton>
+                                    <StepButton type="button" onClick={() => setSelectedTab("chart-plan")}>
+                                        Próximo passo <img src={RightIcon} alt="ícone de próximo passo" />
+                                    </StepButton>
+                                </StepFooter>
+
                             </>)}
-                            {selectedTab === "chart-plan" && (<h1>Chart Plan</h1>)}
+                            {selectedTab === "chart-plan" && (<>
+                                <ChartPlan />
+                                <StepFooter className="third-step">
+                                    <StepButton type="button" onClick={() => setSelectedTab("table-plan")}>
+                                        Passo Anterior <img src={LeftIcon} alt="ícone de próximo passo" />
+                                    </StepButton>
+                                </StepFooter>
+                            </>)}
 
                         </PlanBoxContent>
 

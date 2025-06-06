@@ -97,9 +97,27 @@ export const PlanBoxContent = styled.div`
     -moz-box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
 `;
 
+export const StepFooter = styled.div`
+    display: flex;
+    padding: 0 64px;
+    width: 100%;
+    box-sizing: border-box;
+
+    &.first-step{
+        justify-content: flex-end;
+    }
+    
+    &.second-step{
+        justify-content: space-between;
+    }
+    
+    &.third-step{
+        justify-content: flex-start;
+    }
+`
+
 export const StepButton = styled.button`
     margin-top: 32px;
-    margin-right: 64px;
     padding: 16px 32px;
     background-color: var(--main-color);
     display: flex;
