@@ -105,7 +105,12 @@ class Goal implements IGoal{
        return monthlyAmountFormated;
     }
    
-
+    public getLastMonthAmount(): number {
+        if (!this.monthlyProgress || this.monthlyProgress.length === 0) {
+            return 0;
+        }
+        return this.monthlyProgress[this.monthlyProgress.length - 1];
+    }
 }
 
 export default Goal;
