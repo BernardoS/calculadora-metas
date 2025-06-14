@@ -24,26 +24,27 @@ import RightIcon from "../../assets/icons/right.svg";
 import LeftIcon from "../../assets/icons/left-blue.svg";
 import { ChangeEvent, useState } from "react";
 import moment from "moment";
-import Goal from "../../interfaces/Goal";
-import { GoalFormValuesFirstStep, GoalFormValuesSecondStep } from "../../interfaces/GoalForm";
+import IGoal from "../../interfaces/IGoal";
+import { IGoalFormValuesFirstStep, IGoalFormValuesSecondStep } from "../../interfaces/IGoalForm";
 import { firstStepValidationSchema, secondStepValidationSchema } from "../../validators/GoalForm";
 import GoalSteps from "../../components/GoalSteps";
 import { useNavigate } from "react-router-dom";
+import Goal from "../../models/Goal";
 
 
 
 const GoalInfo = () => {
 
     const [currentStep, setCurrentStep] = useState<number>(1);
-    const [goal, setGoal] = useState<Goal>({});
+    const [goal, setGoal] = useState<IGoal>({});
     const navigate = useNavigate();
 
 
     async function nextStep(
-        values: GoalFormValuesFirstStep
+        values: IGoalFormValuesFirstStep
     ) {
         console.log(values);
-        const newGoal: Goal = {
+        const newGoal: IGoal = {
             initialDate: values.initialDate,
             initialQuantity: values.initialQuantity,
             growthRate: values.growthRate
@@ -53,11 +54,20 @@ const GoalInfo = () => {
     }
 
     function createPlan(
-        values: GoalFormValuesSecondStep
+        values: IGoalFormValuesSecondStep
     ) {
         console.log(values);
-        const newGoal: Goal = { ...goal, finalDate: values.finalDate, finalQuantity: values.finalQuantity }
-        setGoal(newGoal);
+
+        const newGoal: IGoal = new Goal(
+            goal.initialQuantity?.toString() || "0.0",
+            values.finalQuantity?.toString() || "0.0",
+            goal.initialDate,
+            values.finalDate,
+            goal.growthRate
+        );
+
+        setGoal(newGoal); 
+
         navigate("/calculadora-metas/resultados");
     }
 
@@ -69,7 +79,7 @@ const GoalInfo = () => {
                     <InfoBox>
                         <GoalSteps step={currentStep} theme="" />
                         <FormContainer>
-                            <Formik<GoalFormValuesFirstStep>
+                            <Formik<IGoalFormValuesFirstStep>
                                 initialValues={{
                                     initialQuantity: 0.0,
                                     initialDate: moment(new Date()).format("YYYY-MM"),
@@ -125,7 +135,7 @@ const GoalInfo = () => {
 
                             <GoalFormDivider />
 
-                            <Formik<GoalFormValuesSecondStep>
+                            <Formik<IGoalFormValuesSecondStep>
                                 initialValues={{
                                     finalQuantity: 0.0,
                                     finalDate: moment(new Date()).format("YYYY-MM"),
