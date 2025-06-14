@@ -5,6 +5,7 @@ interface IGoal {
     finalDate?: string;
     growthRate?: number;
     monthsList?: string[];
+    monthlyAmount?: number;
     monthlyProgress?: number[];
 }
 
