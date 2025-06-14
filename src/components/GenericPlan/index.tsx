@@ -1,11 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GenericPlanContainer, GenericPlanSection, GenericPlanSectionLabel, GenericPlanSectionValue, GenericPlanTitle } from "./styles";
+import { useGoal } from "../../contexts/GoalContext";
 
 
 const GenericPlan = () => {
 
-    const [monthlyAmount, setMonthlyAmount] = useState('270,00');
-    const [totalAmount, setTotalAmount] = useState('3000,00');
+    const [monthlyAmount, setMonthlyAmount] = useState('0,00');
+    const [totalAmount, setTotalAmount] = useState('0,00');
+    const {goal} = useGoal();
+
+    useEffect(() => {
+        console.log("Goal in GenericPlan:", goal);
+        if(!goal) {
+            setMonthlyAmount('0,00');
+            setTotalAmount('0,00');
+            return;
+        }
+
+        if (goal.monthlyAmount !== undefined){
+            setMonthlyAmount(goal.monthlyAmount.toFixed(2).replace('.', ','));
+        }
+
+        if(goal.finalQuantity !== undefined && typeof goal.finalQuantity === 'number') {
+            setTotalAmount(goal.finalQuantity.toFixed(2).replace('.', ','));
+        }
+    },[goal]);
 
     return (
         <GenericPlanContainer>

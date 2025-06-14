@@ -30,6 +30,7 @@ import { firstStepValidationSchema, secondStepValidationSchema } from "../../val
 import GoalSteps from "../../components/GoalSteps";
 import { useNavigate } from "react-router-dom";
 import Goal from "../../models/Goal";
+import { useGoal } from "../../contexts/GoalContext";
 
 
 
@@ -37,6 +38,7 @@ const GoalInfo = () => {
 
     const [currentStep, setCurrentStep] = useState<number>(1);
     const [goal, setGoal] = useState<IGoal>({});
+    const { setGoal: setGoalContext } = useGoal();
     const navigate = useNavigate();
 
 
@@ -47,7 +49,7 @@ const GoalInfo = () => {
         const newGoal: IGoal = {
             initialDate: values.initialDate,
             initialQuantity: values.initialQuantity,
-            growthRate: values.growthRate
+            growthRate: values.growthRate            
         }
         await setGoal(newGoal);
         await setCurrentStep(2);
@@ -67,7 +69,7 @@ const GoalInfo = () => {
         );
 
         setGoal(newGoal); 
-
+        setGoalContext(newGoal); // Update the context with the new goal
         navigate("/calculadora-metas/resultados");
     }
 
