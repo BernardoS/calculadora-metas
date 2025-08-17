@@ -149,7 +149,7 @@ export const BannerActionLink = styled(Link)`
 
 export const BannerImageSection = styled.section`
     background-image:url(${PlanningDoodle});
-    background-size: object-fit;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
