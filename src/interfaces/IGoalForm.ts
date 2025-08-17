@@ -1,10 +1,10 @@
-export interface GoalFormValuesFirstStep {
+export interface IGoalFormValuesFirstStep {
     initialQuantity: number;
     initialDate: string;
     growthRate?: number;
 }
 
-export interface GoalFormValuesSecondStep {
+export interface IGoalFormValuesSecondStep {
     finalQuantity: number;
     finalDate: string;
 }
