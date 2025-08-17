@@ -1,6 +1,40 @@
+import { useEffect, useState } from "react";
+import { useGoal } from "../../contexts/GoalContext";
 import { Table, TablePlanContainer, TablePlanTitle } from "./styles";
 
 const TablePlan = () => {
+
+    const [monthList, setMonthList] = useState<string[]>([]);
+    const [monthlyProgress, setMonthlyProgress] = useState<string[]>([]);
+    const [monthlyAmount, setMonthlyAmount] = useState<string>('');
+
+    const {goal} = useGoal();
+
+    useEffect(() => {
+        console.log("Goal in TablePlan:", goal);
+        if(!goal) {
+            setMonthList([]);
+            setMonthlyProgress([]);
+            setMonthlyAmount('');
+            return;
+        }
+
+        if (goal.monthsList !== undefined){
+            setMonthList(goal.monthsList);
+        }
+
+        if (goal.monthlyProgress !== undefined){
+            const formattedProgress = goal.monthlyProgress.map(amount => `R$ ${amount.toFixed(2).replace('.', ',')}`);
+            setMonthlyProgress(formattedProgress);
+        }
+
+        if (goal.monthlyAmount !== undefined){
+            setMonthlyAmount(`R$ ${goal.monthlyAmount.toFixed(2).replace('.', ',')}`);
+        }
+
+
+    },[goal]);
+
     return (
         <TablePlanContainer>
             <TablePlanTitle>Tabela de planejamento</TablePlanTitle>
@@ -13,31 +47,19 @@ const TablePlan = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><b>01/2025</b></td>
-                        <td>R$ 270,00</td>
-                        <td>R$ 270,00</td>
-                    </tr>
-                    <tr>
-                        <td><b>02/2025</b></td>
-                        <td>R$ 270,00</td>
-                        <td>R$ 540,00</td>
-                    </tr>
-                    <tr>
-                        <td><b>03/2025</b></td>
-                        <td>R$ 270,00</td>
-                        <td>R$ 810,00</td>
-                    </tr>
-                    <tr>
-                        <td><b>04/2025</b></td>
-                        <td>R$ 270,00</td>
-                        <td>R$ 1080,00</td>
-                    </tr>
-                    <tr>
-                        <td><b>05/2025</b></td>
-                        <td>R$ 270,00</td>
-                        <td>R$ 1350,00</td>
-                    </tr>
+                    {monthList.length > 0 && monthlyProgress.length > 0 ? (
+                        monthList.map((month, index) => (
+                            <tr key={index}>
+                                <td><b>{month}</b></td>
+                                <td>{monthlyAmount}</td>
+                                <td>{monthlyProgress[index]}</td>
+                            </tr>
+                        ))
+                    ) : (
+                        <tr>
+                            <td colSpan={3} style={{ textAlign: 'center', marginTop:'24' }}>Nenhum dado disponível</td>
+                        </tr>
+                    )}
                 </tbody>
 
             </Table>

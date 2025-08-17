@@ -31,7 +31,7 @@ class Goal implements IGoal{
         this.finalDate = finalDate;
         this.growthRate = growthRate;
 
-        this.generateMonthsList();
+        this.monthsList = this.generateMonthsList();// Ajustar o método para validar mês negativo
         console.log("Months List:", this.monthsList);
 
         this.monthlyAmount =  this.calculateMonthlyAmount();
@@ -42,7 +42,7 @@ class Goal implements IGoal{
     }
 
 
-    private generateMonthsList() {
+    private generateMonthsList(): string[] | undefined {
         if (!this.initialDate || !this.finalDate) return;
 
         const startDate = new Date(this.initialDate);
@@ -61,8 +61,10 @@ class Goal implements IGoal{
             months.push(`${month}/${year}`);
             currentDate.setMonth(currentDate.getMonth() + 1);
         }
+        
+        console.log("Generated Months:", months);
 
-        this.monthsList = months; 
+        return months;
     }
 
     private calculateMonthlyAmount(): number {
