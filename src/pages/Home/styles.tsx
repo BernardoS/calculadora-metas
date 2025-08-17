@@ -69,7 +69,6 @@ export const BannerInfoText = styled.div`
         }
         
         b {
-            font-size: 56px;
             color: var(--main-color-darker);
         }
     }
