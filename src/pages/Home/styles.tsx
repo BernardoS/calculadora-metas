@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import MessyDoodleLight from "../../assets/images/messy-doodle-light.svg";
+import PlanningDoodle from "../../assets/images/planning-doodle-light.png";
 import { device } from "../../utils/layoutBreakpoints";
 
 
@@ -149,7 +149,7 @@ export const BannerActionLink = styled(Link)`
 `;
 
 export const BannerImageSection = styled.section`
-    background-image:url(${MessyDoodleLight});
+    background-image:url(${PlanningDoodle});
     background-size: object-fit;
     background-position: center;
     background-repeat: no-repeat;
@@ -157,8 +157,6 @@ export const BannerImageSection = styled.section`
     width: 50%;
     height:85%;
     align-self: center;
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
 
     &:hover{
         animation: shake-banner 0.5s ease-in-out alternate;
