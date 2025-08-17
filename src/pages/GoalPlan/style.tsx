@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../utils/layoutBreakpoints";
 
 export const GoalPlanContainer = styled.div`
     background-color: var(--bg-blue);
@@ -29,6 +30,11 @@ export const PlanBox = styled.div`
     box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
     -webkit-box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
     -moz-box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
+
+    @media ${device.mobile} {
+        padding: 16px;
+        gap: 8px;
+    }
 `
 
 export const GoalPlanTitle = styled.div`
@@ -52,6 +58,13 @@ export const GoalPlanActions = styled.div`
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+
+    @media ${device.tablet} {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 16px;
+    }
 `;
 
 export const GoalPlanButton = styled.button`
@@ -78,6 +91,10 @@ export const GoalPlanButton = styled.button`
     &.active{
         background-color:var(--main-color);
         color: var(--txt-light);
+    }
+
+    @media ${device.tablet} {
+        width: 100%;
     }
 `;
 
@@ -113,6 +130,16 @@ export const StepFooter = styled.div`
     
     &.third-step{
         justify-content: flex-start;
+    }
+
+    @media ${device.laptop} {
+         &.first-step{
+            justify-content: center;
+        }
+    }
+
+    @media ${device.laptop} {
+        padding: 16px;
     }
 `
 
@@ -151,6 +178,10 @@ export const StepButton = styled.button`
 
     &:active{
         scale: 0.9;
+    }
+
+    @media ${device.laptop} {
+        width: 100%;;
     }
 
 `;
