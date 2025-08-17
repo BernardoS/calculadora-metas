@@ -31,7 +31,6 @@ export const GenericPlanSectionLabel = styled.span`
 `
 
 export const GenericPlanSectionValue = styled.div`
-    display: flex;
     background-color: var(--bg-default);
     border-radius: 8px;
     padding: 16px;
@@ -44,12 +43,24 @@ export const GenericPlanSectionValue = styled.div`
     font-size: 32px;
     color: var(--main-color);
     font-weight: 700;
+    width: 45%;
+
+    span{
+        display: block;
+    }
+
     b{  
+        display: inline-block;
         font-weight: 700;
         font-size:24px;
         color: var(--main-color-darker);
         .year{
             font-size: 32px;
+            display: inline-block;
+        }
+        .month{
+            font-size: 32px;
+            display: inline-block;
         }
     }
 `;

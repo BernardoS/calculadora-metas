@@ -7,6 +7,7 @@ interface IGoal {
     monthsList?: string[];
     monthlyAmount?: number;
     monthlyProgress?: number[];
+    lastYear?: string;
     getLastMonthAmount?: () => number;
 }
 

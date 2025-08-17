@@ -10,6 +10,7 @@ class Goal implements IGoal{
     monthsList?: string[];
     monthlyAmount?: number;
     monthlyProgress?: number[];
+    lastYear?: string;
 
     
 
@@ -39,6 +40,9 @@ class Goal implements IGoal{
 
         this.monthlyProgress = this.calculateMonthlyProgress();
         console.log("Monthly Progress:", this.monthlyProgress);
+
+        this.lastYear = this.getLastYear();
+        console.log("Last Year:", this.lastYear);
     }
 
 
@@ -113,6 +117,15 @@ class Goal implements IGoal{
         }
         return this.monthlyProgress[this.monthlyProgress.length - 1];
     }
+
+    public getLastYear(): string {
+        if (!this.monthsList || this.monthsList.length === 0) {
+            return '';
+        }
+        const lastMonth = this.monthsList[this.monthsList.length - 1];
+        return lastMonth.split('/')[1]; // Retorna o ano do último mês
+    }
 }
+
 
 export default Goal;
