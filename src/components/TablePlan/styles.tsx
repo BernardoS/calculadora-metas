@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../utils/layoutBreakpoints";
 
 export const TablePlanContainer = styled.div`
     display: flex;
@@ -24,7 +25,7 @@ export const Table = styled.table`
     color: var(--main-color);
     font-size: 18px;
     font-weight: 500;
-    background-color: var(--bg-wthite); 
+    background-color: var(--bg-default); 
     box-shadow: 10px 10px 0px -2px rgba(26,26,26,0.7);
     -webkit-box-shadow: 10px 10px 0px -2px rgba(26,26,26,0.7);
     -moz-box-shadow: 10px 10px 0px -2px rgba(26,26,26,0.7);
@@ -57,5 +58,38 @@ export const Table = styled.table`
         }
     }
 
+    @media ${device.tablet} {
+        border-collapse: collapse;
+        margin:0;
+        width: 100%;
+        box-shadow: 0 0 5px rgba(0, 0, 0, .25);
+        border:3px solid var(--main-color-darker);
+
+        thead{
+            height: unset;
+        }
+        thead tr{
+            display:none;
+        }
+        tr{
+            display: block;
+            height: unset;
+        }
+        th, td{
+            padding: .5em;
+        }
+        td{
+            text-align: right;
+            display: block;
+            font-size: 1em;
+        }
+        td::before{
+            content: attr(data-title) ": ";
+            float: left;
+        }
+        tbody tr:nth-child(even){
+            background-color: var(--bg-blue);
+        }
+    }
 
 `;

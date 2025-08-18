@@ -50,9 +50,9 @@ const TablePlan = () => {
                     {monthList.length > 0 && monthlyProgress.length > 0 ? (
                         monthList.map((month, index) => (
                             <tr key={index}>
-                                <td><b>{month}</b></td>
-                                <td>{monthlyAmount}</td>
-                                <td>{monthlyProgress[index]}</td>
+                                <td data-title="Mês"><b>{month}</b></td>
+                                <td data-title="Quantidade mensal">{monthlyAmount}</td>
+                                <td data-title="Quantidade acumulada" >{monthlyProgress[index]}</td>
                             </tr>
                         ))
                     ) : (

@@ -133,14 +133,21 @@ export const StepFooter = styled.div`
     }
 
     @media ${device.laptop} {
-         &.first-step{
+        padding: 16px;
+        &.first-step{
             justify-content: center;
+        }
+        
+    }
+    @media ${device.tablet}{
+        &.second-step{
+            justify-content: center;
+            flex-direction: column-reverse;
+            align-items: center;
         }
     }
 
-    @media ${device.laptop} {
-        padding: 16px;
-    }
+   
 `
 
 export const StepButton = styled.button`
@@ -184,4 +191,8 @@ export const StepButton = styled.button`
         width: 100%;;
     }
 
+    @media ${device.tablet} {
+        align-self: center;
+        margin-top: 16px;
+    }
 `;
