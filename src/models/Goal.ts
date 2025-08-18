@@ -11,6 +11,7 @@ class Goal implements IGoal{
     monthlyAmount?: number;
     monthlyProgress?: number[];
     lastYear?: string;
+    lastMonthLabel?: string;
 
     
 
@@ -43,6 +44,9 @@ class Goal implements IGoal{
 
         this.lastYear = this.getLastYear();
         console.log("Last Year:", this.lastYear);
+
+        this.lastMonthLabel = this.getLastMonthLabel();
+        console.log("Last Month Label:", this.lastMonthLabel);
     }
 
 
@@ -124,6 +128,30 @@ class Goal implements IGoal{
         }
         const lastMonth = this.monthsList[this.monthsList.length - 1];
         return lastMonth.split('/')[1]; // Retorna o ano do último mês
+    }
+
+    public getLastMonthLabel(): string {
+        if (!this.monthsList || this.monthsList.length === 0) {
+            return '';
+        }
+        const lastMonth = this.monthsList[this.monthsList.length - 1];
+        const lastMonthNumber = lastMonth.split('/')[0]; 
+
+        switch (lastMonthNumber) {
+            case '01': return 'Janeiro';
+            case '02': return 'Fevereiro';
+            case '03': return 'Março';
+            case '04': return 'Abril';
+            case '05': return 'Maio';
+            case '06': return 'Junho';
+            case '07': return 'Julho';
+            case '08': return 'Agosto';
+            case '09': return 'Setembro';
+            case '10': return 'Outubro';
+            case '11': return 'Novembro';
+            case '12': return 'Dezembro';
+            default: return '';
+        }
     }
 }
 
