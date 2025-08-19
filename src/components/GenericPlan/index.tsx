@@ -8,6 +8,7 @@ const GenericPlan = () => {
     const [monthlyAmount, setMonthlyAmount] = useState('0,00');
     const [totalAmount, setTotalAmount] = useState('0,00');
     const [lastYear, setLastYear] = useState('');
+    const [lastMonthLabel, setLastMonthLabel] = useState('');
     const {goal} = useGoal();
 
     useEffect(() => {
@@ -30,6 +31,10 @@ const GenericPlan = () => {
             setLastYear(goal.lastYear);
         }
 
+        if(goal.lastMonthLabel !== undefined) {
+            setLastMonthLabel(goal.lastMonthLabel);
+        }
+
     },[goal]);
 
     return (
@@ -45,7 +50,7 @@ const GenericPlan = () => {
             <GenericPlanSection>
                 <GenericPlanSectionLabel>para alcançar (aproximadamente)</GenericPlanSectionLabel>
                 <GenericPlanSectionValue>
-                    <span>R$ {totalAmount} <b>em dezembro de <span className="year" >{lastYear}</span></b></span>
+                    <span>R$ {totalAmount} <b>em {lastMonthLabel} de <span className="year" >{lastYear}</span></b></span>
                 </GenericPlanSectionValue>
             </GenericPlanSection>
         </GenericPlanContainer>

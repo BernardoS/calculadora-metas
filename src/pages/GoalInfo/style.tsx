@@ -1,5 +1,6 @@
 import { Field, Form } from "formik";
 import styled from "styled-components";
+import { device } from "../../utils/layoutBreakpoints";
 
 export const GoalInfoContainer = styled.div`
     background-color: var(--bg-blue);
@@ -30,6 +31,12 @@ export const InfoBox = styled.div`
     box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
     -webkit-box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
     -moz-box-shadow: 10px 10px 0px -2px rgba(26,26,26,1);
+
+     @media ${device.tablet} {
+        &.form-disabled-step{
+            padding: 16px 24px;
+        }
+    }
 `
 
 export const FormContainer = styled.div`
@@ -40,6 +47,12 @@ export const GoalForm = styled(Form)`
     display: flex;
     flex-direction: column;
     width: 100%;  
+
+    @media ${device.tablet} {
+        &.form-disabled-step{
+            display: none;
+        }
+    }
 `;
 export const GoalFormBody = styled.section`
     display: flex;
@@ -86,6 +99,17 @@ export const GoalFormFieldSet = styled.fieldset`
         scale: 0.95;
         pointer-events: none;
     }
+
+    @media ${device.tablet} {
+        &.disabled-step{
+            display: none;
+        }
+    }
+
+    @media ${device.mobile} {
+       
+    }
+    
 `
 
 export const GoalFormField = styled(Field)`
@@ -173,6 +197,10 @@ export const GoalFormDivider = styled.div`
     border: none;
     margin:0px 32px;
     background-color: var(--border-default);
+
+     @media ${device.tablet} {
+        display: none;
+    }
 `
 
 export const ErrorText = styled.p`

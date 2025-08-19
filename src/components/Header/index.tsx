@@ -15,7 +15,7 @@ const Header = () => {
         <HeaderContainer>
             <HeaderContent>
                 <DesktopContent>
-                    <LogoContainer>
+                    <LogoContainer to="/calculadora-metas">
                         <LogoImage src={HeaderLogo} aria-label="Calculadora de Metas" />
                     </LogoContainer>
                     <NavBar>
@@ -30,7 +30,7 @@ const Header = () => {
                             <img alt="Ícone do menu hamburguer" src={MenuIcon} />
                         </button>
                     </MenuButtonContainer>
-                    <MobileLogoContainer>
+                    <MobileLogoContainer to="/calculadora-metas">
                         <img src={HeaderMobileLogo} aria-label="Calculadora de Metas" />
                     </MobileLogoContainer>
 

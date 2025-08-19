@@ -31,7 +31,7 @@ export const DesktopContent = styled.div`
     }
 `;
 
-export const LogoContainer = styled.div`
+export const LogoContainer = styled(Link)`
     display: flex;
 `
 export const LogoImage = styled.img`
@@ -92,7 +92,7 @@ export const MenuButtonContainer =styled.div`
     }
 `;
 
-export const MobileLogoContainer = styled.div`
+export const MobileLogoContainer = styled(Link)`
     width: 100%;
     display: flex;
     align-items: center;

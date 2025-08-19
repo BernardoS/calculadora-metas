@@ -90,7 +90,7 @@ const GoalInfo = () => {
                                 onSubmit={nextStep}
                                 validationSchema={firstStepValidationSchema}>
                                 {({ setFieldValue }) => (
-                                    <GoalForm>
+                                    <GoalForm className={currentStep == 1 ? "form-current-step" : "form-disabled-step"}>
                                         <GoalFormBody>
 
                                             <GoalFormFieldSet className={currentStep == 1 ? "current-step" : "disabled-step"}>
@@ -145,7 +145,7 @@ const GoalInfo = () => {
                                 onSubmit={createPlan}
                                 validationSchema={secondStepValidationSchema}>
                                 {({ setFieldValue }) => (
-                                    <GoalForm>
+                                    <GoalForm className={currentStep == 2 ? "form-current-step" : "form-disabled-step"}>
                                         <GoalFormBody>
 
                                             <GoalFormFieldSet className={currentStep == 2 ? "current-step" : "disabled-step"}>

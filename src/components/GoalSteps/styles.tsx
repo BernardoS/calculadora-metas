@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../utils/layoutBreakpoints";
 
 export const GoalStepsContainer = styled.div`
     display: flex;
@@ -11,6 +12,10 @@ export const GoalStepsContent = styled.div`
     display: flex;
     flex-direction: row;
     gap:64px;
+
+    @media ${device.tablet} {
+       gap:24px;
+    }
 `
 export const GoalStepsSection = styled.section<{ "data-theme"?: string }>`
     display: flex;

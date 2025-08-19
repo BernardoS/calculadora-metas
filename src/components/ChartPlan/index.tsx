@@ -1,6 +1,6 @@
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, Title, Tooltip, Legend, BarElement } from 'chart.js';
-import { ChartContainer, ChartPlanContainer, ChartPlanTitle } from './styles';
+import { ChartBox, ChartContainer, ChartPlanContainer, ChartPlanTitle } from './styles';
 import { useEffect, useState } from 'react';
 import { useGoal } from '../../contexts/GoalContext';
 import { IChartData } from '../../interfaces/IChartData';
@@ -86,16 +86,18 @@ const ChartPlan = () => {
                 Gráfico de evolução do plano
             </ChartPlanTitle>
             
-            <ChartContainer>
+            <ChartBox>
                 {!data ? (
                     <p>Carregando...</p>
                 ) : (
-                    <Bar options={options} data={{
-                        labels: data.labels,
-                        datasets: data.datasets
-                    }} />
+                    <ChartContainer>
+                        <Bar options={options} data={{
+                                                labels: data.labels,
+                                                datasets: data.datasets
+                                            }} />
+                    </ChartContainer>
                 )}
-            </ChartContainer>
+            </ChartBox>
 
         </ChartPlanContainer>
     );

@@ -1,11 +1,16 @@
 import styled from "styled-components";
+import { device } from "../../utils/layoutBreakpoints";
 
 export const GenericPlanContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
-    gap:64px
+    gap:64px;
+     
+    @media ${device.laptop} {
+        gap:16px;
+    }
 `
 
 export const GenericPlanTitle = styled.h2`
@@ -21,6 +26,15 @@ export const GenericPlanSection = styled.section`
     display: flex;
     justify-content: space-between;
     padding: 0 64px;
+
+     @media ${device.laptop} {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding: 0 16px;
+        text-align: center;
+    }
+
 `
 
 export const GenericPlanSectionLabel = styled.span`
@@ -28,6 +42,13 @@ export const GenericPlanSectionLabel = styled.span`
     color: var(--main-color);
     font-weight: 700;
     width:50%;
+
+    @media ${device.laptop} {
+        font-size: 24px;
+    }
+    @media ${device.tablet} {
+        width: 100%;
+    }
 `
 
 export const GenericPlanSectionValue = styled.div`
@@ -62,5 +83,25 @@ export const GenericPlanSectionValue = styled.div`
             font-size: 32px;
             display: inline-block;
         }
+    }
+
+     @media ${device.laptop} {
+        text-align: center;
+        width: 65%;
+        font-size: 24px;
+        b{
+            display: block;
+            font-size: 20px;
+            .year{
+                font-size: 24px;
+            }
+            .month{
+                font-size: 24px;
+            }
+        }
+    }
+
+    @media ${device.tablet} {
+        width: 100%;
     }
 `;
