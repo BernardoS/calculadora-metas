@@ -34,7 +34,7 @@ const Home = () => {
                                 <h2>Aqui você calcula e descobre o quanto precisa juntar por <b>mês</b> para alcançar sua meta na <b>data que você quiser.</b></h2>
                             </BannerInfoText>
                             <BannerAction>
-                                <BannerActionLink to="/calculadora-metas/info" >
+                                <BannerActionLink to="/info" >
                                     Calcular Planejamento <img src={NoteIcon} alt="ícone de calcular a meta" />
                                 </BannerActionLink>
                             </BannerAction>

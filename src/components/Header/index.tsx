@@ -15,12 +15,12 @@ const Header = () => {
         <HeaderContainer>
             <HeaderContent>
                 <DesktopContent>
-                    <LogoContainer to="/calculadora-metas">
+                    <LogoContainer to="/">
                         <LogoImage src={HeaderLogo} aria-label="Calculadora de Metas" />
                     </LogoContainer>
                     <NavBar>
-                        <NavItem to="/calculadora-metas">Home</NavItem>
-                        <NavItem to="/calculadora-metas/info">Calculadora</NavItem>
+                        <NavItem to="/">Home</NavItem>
+                        <NavItem to="/info">Calculadora</NavItem>
                     </NavBar>
                 </DesktopContent>
 
@@ -30,7 +30,7 @@ const Header = () => {
                             <img alt="Ícone do menu hamburguer" src={MenuIcon} />
                         </button>
                     </MenuButtonContainer>
-                    <MobileLogoContainer to="/calculadora-metas">
+                    <MobileLogoContainer to="/">
                         <img src={HeaderMobileLogo} aria-label="Calculadora de Metas" />
                     </MobileLogoContainer>
 
@@ -46,11 +46,11 @@ const Header = () => {
 
                             </DrawerHeader>
                             <DrawerOptions>
-                                <DrawerOption onClick={() => setOpen(false)} to="/calculadora-metas">
+                                <DrawerOption onClick={() => setOpen(false)} to="/">
                                     <img src={HomeIcon} alt="Ícone da home" />
                                     Home
                                 </DrawerOption>
-                                <DrawerOption onClick={() => setOpen(false)} to="/calculadora-metas/info">
+                                <DrawerOption onClick={() => setOpen(false)} to="/info">
                                     <img src={CalculatorIcon} alt="Ícone da calculadora" />
                                     Calculadora
                                 </DrawerOption>
