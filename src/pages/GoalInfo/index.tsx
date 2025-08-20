@@ -70,7 +70,7 @@ const GoalInfo = () => {
 
         setGoal(newGoal); 
         setGoalContext(newGoal); // Update the context with the new goal
-        navigate("/calculadora-metas/resultados");
+        navigate("/resultados");
     }
 
     return (

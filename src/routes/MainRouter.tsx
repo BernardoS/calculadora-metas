@@ -10,9 +10,9 @@ const MainRouter = () => {
         <BrowserRouter>
             <GoalProvider>
                 <Routes>
-                    <Route path="/calculadora-metas/" element={<Home />} />
-                    <Route path="/calculadora-metas/info" element={<GoalInfo />} />
-                    <Route path="/calculadora-metas/resultados" element={<GoalPlan />} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/info" element={<GoalInfo />} />
+                    <Route path="/resultados" element={<GoalPlan />} />
                 </Routes>
             </GoalProvider>
 
