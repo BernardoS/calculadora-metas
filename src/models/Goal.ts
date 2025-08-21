@@ -79,36 +79,56 @@ class Goal implements IGoal{
         console.log("Calculating Monthly Amount with:", {
             initialQuantity: this.initialQuantity,
             finalQuantity: this.finalQuantity,
-            monthsList: this.monthsList
+            monthsList: this.monthsList,
+            growthRate: this.growthRate
         });
         
-        if (this.initialQuantity == undefined || this.finalQuantity == undefined  || this.monthsList == undefined) {
+        if (this.initialQuantity == undefined || this.finalQuantity == undefined || this.monthsList == undefined) {
             console.error("Missing parameters for monthly amount calculation.");
             return 0;
         }
 
         const totalMonths = this.monthsList.length;
-        const totalAmount = this.finalQuantity - this.initialQuantity;
+        const finalValue = this.finalQuantity - this.initialQuantity;
 
-        const monthlyAmount = totalMonths > 0 ? totalAmount / totalMonths : 0;
+        let monthlyAmount = 0;
 
-        const monthlyAmountFormated =  this.formatMonthtlyAmount(monthlyAmount);
+        if (this.growthRate && this.growthRate > 0) {
+            // converte de % para decimal
+            const i = this.growthRate / 100; 
+            monthlyAmount = (finalValue * i) / (Math.pow(1 + i, totalMonths) - 1);
+        } else {
+            // cálculo simples (sem juros)
+            monthlyAmount = totalMonths > 0 ? finalValue / totalMonths : 0;
+        }
 
-        return monthlyAmountFormated;
+        return this.formatMonthtlyAmount(monthlyAmount);
     }
+
 
     private calculateMonthlyProgress(): number[] {
         if (!this.monthsList || !this.monthlyAmount) return [];
 
         const progress: number[] = [];
-        for (let i = 0; i < this.monthsList.length; i++) {
+        let saldo = this.initialQuantity ?? 0;
+        const i = this.growthRate ? this.growthRate / 100 : 0; // conversão %
 
-            const monthlyProgress = this.formatMonthtlyAmount(this.monthlyAmount * (i + 1));
+        for (let month = 0; month < this.monthsList.length; month++) {
+            // adiciona a contribuição mensal
+            saldo = saldo + this.monthlyAmount;
 
-            progress.push(monthlyProgress);
+            // aplica o rendimento do mês
+            if (i > 0) {
+                saldo = saldo * (1 + i);
+            }
+
+            progress.push(this.formatMonthtlyAmount(saldo));
         }
+
         return progress;
     }
+
+
 
     private formatMonthtlyAmount(monthlyAmount:number): number {
        const monthlyAmountFormated = monthlyAmount.toFixed(2) == "NaN" ? 0 : Number(monthlyAmount.toFixed(2));
